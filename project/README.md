@@ -48,7 +48,7 @@ RScript app.R
 
 # Results
 
--   Gradient Boosting Machines (GBM) proved to be the best model and reached AUC = 0.79 on training dataset
+-   Gradient Boosting Machines (GBM) proved to be the best model and reached AUC = 0.791 on training dataset
 
 # App 
 
