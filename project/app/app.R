@@ -21,7 +21,7 @@ ui <- fluidPage(theme = shinytheme("united"),
 )
 server <- function(input, output) {
   h2o.init()
-  model <- h2o.loadModel("../4-model/my_model1")
+  model <- h2o.loadModel("project/4-model/my_model1")
   
   output$table <- renderTable({
     req(input$file$datapath)
