@@ -1,69 +1,55 @@
-# Užduotis
+# Motivation
 
-Sukurkite duomenų produktą - analitinę aplikaciją, skirtą banko paskolos įvertinimui mašininio mokymosi algoritmų pagalba.
+Help business to classify bad customers and to minimize default rates by creating ML model based app. 
+App can be used by any credit (lending) company which issue consumer credits. 
+App is easy to use. 
 
-<img src="/slides/img/data_product.png" width="500">
+# Dependencies
 
-#### Projekte ugdomi gebėjimai  
+-   R kernel
+-   R packages: h2o, shiny, tidyverse, shinythemes
 
-* analizuoti ir interpretuoti skaičiavimų rezultatus, įvertinti ar galima taikyti duomenų tyrybos metodą konkretiems duomenims ir jeigu ne, pasiūlyti kitą tinkamą metodą;  
-* apibendrinti gautus rezultatus ir pateikti pagrįstas išvadas ir prognozes, rengti ataskaitas;  
-* atlikti duomenų tyrybą panaudojant duomenų tyrybos programinę įrangą; 
-* paaiškinti naudotų duomenų tyrybos metodų sąvokas ir teoriją ; 
-* sudaryti duomenų tyrybos modelius realiems didiesiems verslo duomenims tirti.
+```
+install.packages("h2o")
+install.packages("shiny")
+install.packages("tidyverse")
+install.packages("shinythemes")
+```
 
-#### Projekto vertinimo kriterijai 
+# Directory structure
 
-1. Mokslinės literatūros tinkamumas projekto temai.  
-2. Domenų tyrybos metodų parinkimas projekto uždavinių sprendimui. 
-3. Sukurtų duomenų tyrybos modelių tikslumas ir kokybė 
-4. Modelių programų kokybė. 
-5. Gautų rezultatų patikimumas, interpretavimo teisingumas, išvadų pagrįstumas. 
-6. Rekomendacijos sukurtų modelių tobulinimui. 
-7. Projekto ataskaitos atitikimas nustatytiems reikalavimams.
+```
 
-#### Reikalingi įrankiai projektui
+        ├───1-data
+        ├───2-report
+        ├───3-R
+        ├───4-model
+        ├───5-predictions
+        └───app
+```
 
-* R (shiny, tidyverse, rmarkdown)
-* git, github
-* h2o mašininio mokymosi platforma https://www.h2o.ai/
-* projekto ataskaita rengiama markdown formatu (arba https://rmarkdown.rstudio.com/) 
+# How to execute code
 
---------------------------------------- 
+-   Download data from 1-data folder
+-   Run data preparation script from 3-R folder - data_transformation.R
+-   Run script for best model training from 3-R folder - modelling.R
+-   Run app from app folder app - app.R
+-   Upload .csv format document into app and wait for the results
 
-# Vertinimo schema *(10 balų skalė)*
+```
+git clone https://https://github.com/justinaKTU/KTU-DVDA-PROJECT.git
+cd KTU-DVDA-PROJECT/project/3-R
+RScript data_transformation.R
+RScrip modelling.R
+cd ..
+cd app
+RScript app.R
+```
 
-1. GitHub projektas (1 t.)
-1. Duomenų nuskaitymas ir apjungimas (1 t.)
-1. Duomenų žvalgomoji analizė (1 t.)
-1. Modelio parinkimas (1 t.)
-1. Hyperparametrų optimizavimas (1 t.)
-1. WEB aplikacijos sukūrimas paskolos spėjimui (2 t.)
-1. Modelio tikslumas naujiems duomenims (2 t.)
+# Results
 
-Sum = 9
+-   Gradient Boosting Machines (GBM) proved to be the best model and reached AUC = 0.791 on training dataset
 
-#### Papildomi taškai
+# App 
 
-1. Shiny aplikacijos dizainas (1 t.)
-1. Shiny aplikacijos funkcionalumas (1 t.)
-1. Papildomų ML paketu taikymas (SparkML, SciKit-Learn, Keras, Tensorflow) (1 t.)
-1. Shiny aplikacijos pateikimas (Docker, Shiny-Apps, Shiny-Server) (1 t.)
-
-sum = 4
-
-**Top 3 komandos/dalyviai gaus maksimalų įvertinimą**
-
-<img src="/slides/img/vertinimas.png" width="500">
-
-# Duomenys
-
-Paskolų įsipareigojimo nevykdymas (loan default)
-
-* id - unikalus ID 
-* y - ar įvykdytas paskolos įsipareigojimas (0 - TAIP, 1 - NE)
-* kiti kintamieji - paskolos parametrai (pvz. kredito istorija, paskolos tipas)
-
-Duomenis galite atsisiųsti iš:
-
-[Google Drive](https://drive.google.com/drive/folders/17NsP84MecXHyctM94NLwps_tsowld_y8?usp=sharing)
+![](https://github.com/justinaKTU/KTU-DVDA-PROJECT/blob/main/project/app/Shiny%20app.PNG)
