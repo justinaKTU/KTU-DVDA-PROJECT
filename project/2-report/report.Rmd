@@ -3,15 +3,14 @@ title: "Data overview"
 author: "Justina Laškovaitė-Kolinienė"
 date: "20/12/2022"
 output:
-  pdf_document: default
   html_document:
     keep_md: yes
+  pdf_document: default
 ---
 
 ```{r load-packages, include=FALSE}
 library(knitr)
-#install.packages("ggplot2", dependencies = TRUE)
-library("ggplot2")
+library(ggplot2)
 ```
 
 ```{r setup, include=FALSE}
