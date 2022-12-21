@@ -1,34 +1,46 @@
 ---
-title: "test"
-author: "test"
-date: "10/3/2021"
+title: "Data overview"
+author: "Justina Laškovaitė-Kolinienė"
+date: "20/12/2022"
 output:
+  pdf_document: default
   html_document:
-    keep_md: true
+    keep_md: yes
 ---
+
+```{r load-packages, include=FALSE}
+library(knitr)
+#install.packages("ggplot2", dependencies = TRUE)
+library("ggplot2")
+```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-TEST
+## Data overview
 
-## R Markdown
+There are 1 000 000 rows and 17 columns in the document. So here you can see short summary of every column of the document. For example: min and max values, means and medians and also how many NA values there are. 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r df}
+df <- read.csv(file = "C:/Users/Justina/Desktop/DVDA_magistras/I_kursas/LAB5/KTU-DVDA-PROJECT/project/1-data/train_data.csv")
+df <- as.data.frame(df)
+dim(df)
+summary(df)
 ```
 
-## Including Plots
+## First plot
 
-You can also embed plots, for example:
+As we can see in the plot below, loan amount does not depends on yearly income. 
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r Current Loan Amount and Yearly Income, echo=FALSE}
+ggplot(df, aes(x = amount_current_loan, y = yearly_income)) + geom_point(colour = "black") 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+## Second plot
+
+In the plot below we can inspect the relationship between Monthly Debt Amount and Years of Credit History. 
+
+```{r Monthly Debt Amount and Years of Credit History, echo=FALSE}
+ggplot(df, aes(x = monthly_debt, y = years_credit_history)) + geom_point(colour = "black") 
+```
