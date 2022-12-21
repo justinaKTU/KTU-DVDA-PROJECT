@@ -14,6 +14,7 @@ install.packages("h2o")
 install.packages("shiny")
 install.packages("tidyverse")
 install.packages("shinythemes")
+install.packages("ggplot2")
 ```
 
 # Directory structure
