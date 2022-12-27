@@ -14,7 +14,7 @@ output:
 
 ## Data overview
 
-There are 1 000 000 rows and 17 columns in the document. So here you can see short summary of every column of the document. For example: min and max values, means and medians and also how many NA values there are. 
+There are 10 000 000 rows and 17 columns in the document. So here you can see short summary of every column of the document. For example: min and max values, means and medians and also how many NA values there are. 
 
 
 ```r
